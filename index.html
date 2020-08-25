@@ -1,0 +1,377 @@
+<html>
+<head>
+	<style type="text/css">
+		.ts ty{                                  
+			color: red;
+			background-color: black;
+			border-radius:1cm;
+			display:inline-block;
+			width:300px;
+		}
+		.ts {
+			background-color: grey;
+			border-radius:40cm;
+			font-size: 40px;
+			font-style: italic;
+			text-shadow:10px 10px 7px rgb(0,0,100); /*Text-shadow contain x-offset,y-offset,blur,color.
+			                                           Add multiple text-shadow by using commas
+			                                         It does not contain spread argument as in box-shadow*/
+			width:900px;
+			margin-left:190px;
+			word-spacing: 30px;		
+		}
+		.mag {
+			background-size:690px;
+			background-repeat:no-repeat
+		}
+		.mag:hover {
+			transition:0.7s transform; /* You can write any value first*/  /*Other properties like width ,height can also be use.*/
+		    transform:rotateX(360deg) scale(0.9); /*You can use negative value with deg for anti-clockwise */
+		    cursor:pointer;
+		   }
+		#fun {
+			font-family:fantasy;
+			text-align: center;
+			font-variant:small-caps
+		}
+		a {
+			text-decoration:none;
+		}
+        @font-face{
+			font-family:army;
+			src:url("Fonts/armalite.ttf");
+		}
+		
+     .screen{
+     	background-image:url("army1.jpg");
+     	border-radius:3.5cm;
+     	margin-bottom:1cm;
+     	width:30cm;
+     	background-size:cover;
+     	background-position:center;
+     	background-repeat:no-repeat;
+     	border:0.5cm solid silver;
+     	height:10cm;
+     	padding:0.5cm;
+     	background-clip:content-box;
+     	margin-top:4cm;
+     }
+       
+     .screen2{
+     	background-image:url("af2.jpg");
+     	border-radius:3.5cm;
+     	margin-bottom:1cm;
+     	width:30cm;
+     	background-size:cover;
+     	background-position:center;
+     	background-repeat:no-repeat;
+     	border:0.5cm solid silver;
+     	height:10cm;
+     	padding:0.5cm;
+     	background-clip:content-box;
+     	margin-top:4cm;
+     }
+        
+     .screen3{
+     	background-image:url("navy4.jpg");
+     	border-radius:3.5cm;
+     	margin-bottom:1cm;
+     	width:30cm;
+     	background-size:cover;
+     	background-position:center;
+     	background-repeat:no-repeat;
+     	border:0.5cm solid silver;
+     	height:10cm;
+     	padding:0.5cm;
+     	background-clip:content-box;
+     	margin-top:4cm;
+         }
+    @keyframes shadow{
+         	0%{box-shadow:10px 10px 20px 20px #ff8000,-10px -10px 20px 20px #ff8000}
+         	50%{box-shadow:10px 10px 20px 10px white,-10px -10px 20px 10px white}
+         	100%{box-shadow:10px 10px 20px 10px #008000,-10px -10px 20px 10px #008000}
+         }
+    .boxshadow{
+        	box-shadow:10px 10px 20px 20px #ff8000,-10px -10px 20px 20px #ff8000;
+        	animation-name:shadow;
+        	animation-duration:5s;
+        	animation-fill-mode:forwards;
+        	animation-direction:normal;
+        	animation-play-state:smooth;
+        	animation-iteration-count:infinite;
+        	animation-timing-function:ease-in-out;
+        	animation-delay:1s;}
+
+    ::placeholder{
+            color:pink;
+            font-family:cursive;
+            background-image:url(back.jpg);
+            color:navy;
+        }
+    .text-image{
+        	background-image:url("tricolor2.jpg");
+        	background-size:cover;
+        	-webkit-background-clip:text;
+        	color:transparent;
+        }
+        
+
+
+        	/*Neon form buttons*/
+
+    input:hover,button:hover{
+        	transition:transform 0.9s;
+			filter:drop-shadow(2px 2px 15px #03e9f4) drop-shadow(-2px -2px 15px #03e9f4);
+		}
+
+	
+	img[class="mag"]:hover{
+			clip-path:circle(32px at center);   /*This is to clip the box(having class=mag) in circular which is rectagukar.*/
+        	transition:transform 0.9s;
+			filter:drop-shadow(2px 2px 15px #03e9f4) drop-shadow(-2px -2px 15px #03e9f4);
+		}
+
+	
+
+                      /*Dark mode*/
+
+	input[type="checkbox"] {
+		appearance:none;
+		display:none;
+		visibility:hidden;
+	}
+
+	input[type="checkbox"]:checked ~.check:before{
+		transform:translateX(-50px);
+	}
+
+	input[type="checkbox"]:checked ~ .check:after{
+		transform:translateX(0px);
+	}
+
+	input[type="checkbox"]:checked ~.check{
+		background-color:orange;
+	}
+
+
+	.check:before,
+	.check:after{
+		border-radius:50%;
+		content:' ';
+		height:16px;
+		top:2px;
+		position:absolute;
+		transition:transform 0.5s ease;
+		width:16px;
+	}
+
+
+
+	.check:before{
+		background-color:#ffffff;
+		left:2px;
+	}
+
+
+	.check{
+		background-color:teal;
+		border-radius:20px;
+		cursor:pointer;
+		display:block;
+		height:20px;
+		overflow:hidden;
+		position:relative;
+		transition:background-color 0.5s ease-in,
+		           box-shadow 0.5s ease-in;
+		width:40px;
+	}
+
+	.check:after{
+		background-color:#092c3e;
+		right:2px;
+		transform:translateX(50px); 
+	}
+	label{
+		display:inline-block;     /*This will let you set the width and height.Without this if you click at anywhere right of it then also it is changing color.So for that we are using this.*/    
+	}
+
+</style>
+</head>
+<title>Indian Armed Forces</title>
+
+<label>
+<input type="checkbox">
+<span class="check" onclick="back()" style="width:150px;color:black;text-align: center;">-Dark Mode-</span>
+</label>
+
+
+<div id="fun"> <body style="color: teal;background-image:repeating-linear-gradient(red 0px 100px,orange 1000px 1500px,white 1600px 1900px,green 2000px 2200px,red 2300px)">
+<p class="boxshadow" style="border-radius:40cm;background:skyblue;font-size:40px">WELCOME TO THE OFFICIAL WEBSITE OF INDIAN ARMED FORCES 
+</p>
+<center><div class="screen"></div></center> <!--We can use multiple classes on a single element by keeping single space between them-->
+<center><a href="https://www.indianarmy.nic.in/home"><table draggable="true"  class="mag boxshadow" style="background-image:url(inarmy2.svg);font-size: 50px;border-radius: 4cm;color:pink;padding:4cm 4cm"><tr><td style="border-radius:4cm;background-color: blue;width:10cm;text-align: center">INDIAN ARMY</td></tr></table></a></center><br>
+<center><div class="screen2"></div></center>
+<center><a href="https://indianairforce.nic.in/"><table class="mag boxshadow" style="background-color:skyblue;background-position:center;background-size:400px;background-image:url(inairforce.png);font-size: 50px;border-radius: 4cm;color:pink;padding:4cm 4cm"><tr><td style="border-radius:4cm;background-color: blue;width:10cm;text-align: center">INDIAN AIR FORCE</td></tr></table></a></center><br>
+<center><div class="screen3"></div></center>
+<center><a href="https://www.indiannavy.nic.in/"><table class="mag boxshadow" style="background-image:url(innavy.png);font-size: 50px;border-radius: 4cm;color:pink;padding:4cm 4cm"><tr><td style="border-radius:4cm;background-color: blue;width:10cm;text-align: center">INDIAN NAVY</td></tr></table></a></center>
+<br>
+<br>
+<div class="ts" style="text-decoration:none"><p style="color:navy">WE ARE  <ty>UNBREAKABLE</ty></p></div>
+<center><div style="background-color:teal;border-radius:40px;width:10cm;height:2cm;padding-top:0.5cm">
+<audio controls>
+	<source src="uri_ringtone.mp3" type="audio/mpeg">
+</audio></div><br><br>
+<div style="background-color:red;font-size:50px;font-family:army;border-radius:1cm;width:470px;letter-spacing:2px"><strong class="text-image">JOIN INDIAN ARMED FORCES</strong></div><br><br>
+<!--We can use rgba() in which "a" is alpha.Which define opacity(lies between(0.0-1.0))-->
+<div style="margin-left:20px;background-image:linear-gradient(to bottom,rgba(0,0,0,0.7),rgba(0,0,0,0)),url(back2.jpg);background-repeat:no-repeat;width:490px;height:340px;border-radius:1cm;padding:55px;font-size:40px;color:skyblue;background-size:cover">
+<form action="#" method="POST">
+	<input style="background-image:url(back.jpg);height:1cm;border:solid teal;border-radius:0.5cm" type="search" list="army" name="Army" PLaceholder="Choose Your Career" required><br>    <!--For pre-defining options in search box,:"list" of input should be same as "id" of datalist -->
+	<datalist id="army">
+		<option value="Indian Army">
+		<option value="Indian Navy">
+		<option value="Indian Air Force">	
+	</datalist><br>
+	<label>Your Name:</label>
+	<input style="transform:translateY(-10px);margin-left:10px;height:1cm;border:solid teal;border-radius:0.5cm;background-image:url(back.jpg);" type="text" name="Name" placeholder="Enter Your Name" required><br>
+	<label>Phone Number:</label>
+	<input style="background-image:url(back.jpg);transform:translateY(-10px);margin-left:10px;height:1cm;border:solid teal;border-radius:0.5cm" type="tel" name="Number" placeholder="Enter Your Phone Number" required><br>
+	<label>Gender:</label>
+	<input style="cursor:pointer" type="radio" name="Gender" value="Male" required>Male
+    <input style="cursor:pointer" type="radio" name="Gender" value="Female" required>Female <br> 
+    <input style="cursor:pointer" type="radio" name="Agree" required>Agree Terms & Conditions<br><br>
+	<div><center><button style="cursor:pointer;height:1cm;width:4cm;font-family:serif;font-size:20;border:solid teal;border-radius:0.5cm" type="submit" value="submit" class="submit">Submit</button></center></div>
+ </form>
+<br></div>
+<div>
+<hr color="black">
+<h2><font size="7" color="black" face="times">Follow us on:</font></h2>
+<img class="mag" width="60" src="instagram-new.png">
+<img class="mag" width="60" src="facebook-new.png">
+<img class="mag" width="60" src="twitter-circled.png">
+<img class="mag" width="60" src="youtube-play.png"></font>
+<strong><font size="5" face="times" color="black"><center>Indian Armed Forces.com</center></font></strong>
+<font size="5" face="times" color="black"><b><span>&#169;</span>1895-2020 Conditions Of Use</b></font>     
+</div>
+
+
+<script>
+var image=['army3.jpg','army1.jpg','army4.jpg','army5.jpg','army6.png'];
+var img=document.getElementsByClassName("screen");
+var x=0;
+function changescreen(){
+    if(x<image.length-1){
+        x++;
+        img[0].style.backgroundImage=`url(${image[x]})`;
+    }
+    else{
+        x=-1;
+    }
+
+}
+
+setInterval(changescreen,2000);
+
+
+
+
+var image2=['af.jpg','af1.jpg','af3.jpg','af4.jpg','af2.jpg'];
+var img2=document.getElementsByClassName("screen2");
+var y=0;
+function changescreen2(){
+    if(y<image.length-1){
+        y++;
+        img2[0].style.backgroundImage=`url(${image2[y]})`;
+    }
+    else{
+        y=-1;
+    }
+
+}
+
+setInterval(changescreen2,2000);
+
+
+
+
+
+var image3=['navy.jpg','navy1.jpg','navy2.jpg','navy3.jpg','navy4.jpg','navy5.jpg'];
+var img3=document.getElementsByClassName("screen3");
+var z=0;
+function changescreen3(){
+    if(z<image.length-1){
+        z++;
+        img3[0].style.backgroundImage=`url(${image3[z]})`;
+    }
+    else{
+        z=-1;
+    }
+
+}
+/*"army.jpg")}
+        20%{background-image:url("army3.jpg")}
+        40%{background-image:url("army1.jpg")}
+        60%{background-image:url("army4.jpg")}
+        80%{background-image:url("army5.jpg")}
+        100%{background-image:url("army6.png")}
+        }*/
+setInterval(changescreen3,2000);
+
+
+
+
+/*background-image:linear-gradient(red,orange,white,green,red,orange)*/
+
+let spa=document.getElementsByClassName("check");
+let bod=document.getElementsByTagName("body");
+var i=0;
+function back(){
+	if (i%2==0){
+	bod[0].style.background='repeating-linear-gradient(#28313B,#485461)';
+	spa[0].innerHTML="Day Mode";
+	}
+	else{
+		bod[0].style.background='repeating-linear-gradient(red 0px 100px,orange 1000px 1500px,white 1600px 1900px,green 2000px 2200px,red 2300px)';
+		spa[0].innerHTML="Dark Mode";
+	}
+
+	i++;
+}
+
+
+
+</script>
+</body></div></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
